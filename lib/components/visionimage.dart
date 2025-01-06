@@ -20,36 +20,21 @@ class _VisionImageState extends State<VisionImage> {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
-        Column(
-          children: [
-            for (var n = 1; n < 4; n++) ...[
-              Row(
-                children: [
-                  for (var i = 1; i < 7; i++) ...[
-                    Container(
-                      alignment: Alignment.center,
-                      child: Opacity(
-                        opacity: 0.5,
-                        child: Image.asset(
-                          'lib/assets/images/mapsforhomepage/mapsforhp$n-$i.jpg',
-                          width: deviceWidth / 6,
-                          height: deviceHeight / 4,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ]
-                ],
-              ),
-            ]
-          ],
+        Opacity(
+          opacity: 0.5,
+          child: SizedBox(
+            width: deviceWidth * 7 / 8,
+            height: deviceHeight * 2 / 3,
+            child:
+                Image.asset('lib/assets/images/mapsforhomepage/mapsforhp.jpg'),
+          ),
         ),
         Column(
           children: [
             Text(
               "Co.Atelier",
               style: TextStyle(
-                fontSize: deviceWidth > 615 ? 100 : 50,
+                fontSize: deviceWidth > 800 ? 100 : 50,
                 color: const Color(0xFFe6e6e6),
               ),
               textAlign: TextAlign.center,
@@ -64,7 +49,7 @@ class _VisionImageState extends State<VisionImage> {
               child: Container(
                 constraints: BoxConstraints(
                   maxWidth:
-                      deviceWidth > 615 ? deviceWidth * 3 / 4 : deviceWidth,
+                      deviceWidth > 800 ? deviceWidth * 3 / 4 : deviceWidth,
                   maxHeight: deviceHeight * 3 / 4,
                 ),
                 child: Column(
@@ -74,7 +59,7 @@ class _VisionImageState extends State<VisionImage> {
                       child: Text(
                         "ここは、本来であればバラバラだったはずの個性や才能たちが集うアトリエ。",
                         style: TextStyle(
-                          fontSize: deviceWidth > 615 ? 20 : 12,
+                          fontSize: deviceWidth > 800 ? 20 : 12,
                           color: const Color(0xFFe6e6e6),
                         ),
                         textAlign: TextAlign.center,
@@ -83,7 +68,7 @@ class _VisionImageState extends State<VisionImage> {
                     Text(
                       "Co「Commonality」",
                       style: TextStyle(
-                        fontSize: deviceWidth > 615 ? 20 : 12,
+                        fontSize: deviceWidth > 800 ? 20 : 12,
                         color: const Color(0xFFe6e6e6),
                       ),
                       textAlign: TextAlign.center,
@@ -91,7 +76,7 @@ class _VisionImageState extends State<VisionImage> {
                     Text(
                       "ある集団や物事の間に存在する共通の特徴や性質を指す",
                       style: TextStyle(
-                        fontSize: deviceWidth > 615 ? 20 : 12,
+                        fontSize: deviceWidth > 800 ? 20 : 12,
                         color: const Color(0xFFe6e6e6),
                       ),
                       textAlign: TextAlign.center,
@@ -99,7 +84,7 @@ class _VisionImageState extends State<VisionImage> {
                     Text(
                       "Atelier",
                       style: TextStyle(
-                        fontSize: deviceWidth > 615 ? 20 : 12,
+                        fontSize: deviceWidth > 800 ? 20 : 12,
                         color: const Color(0xFFe6e6e6),
                       ),
                       textAlign: TextAlign.center,
@@ -107,7 +92,7 @@ class _VisionImageState extends State<VisionImage> {
                     Text(
                       "フランス語で芸術家が仕事を行うための専用の作業場のこと",
                       style: TextStyle(
-                        fontSize: deviceWidth > 615 ? 20 : 12,
+                        fontSize: deviceWidth > 800 ? 20 : 12,
                         color: const Color(0xFFe6e6e6),
                       ),
                       textAlign: TextAlign.center,
@@ -115,7 +100,7 @@ class _VisionImageState extends State<VisionImage> {
                     Text(
                       "英語でスタジオ(studio)と呼ばれ写真家・芸術家などの仕事場のこと",
                       style: TextStyle(
-                        fontSize: deviceWidth > 615 ? 20 : 12,
+                        fontSize: deviceWidth > 800 ? 20 : 12,
                         color: const Color(0xFFe6e6e6),
                       ),
                       textAlign: TextAlign.center,
@@ -127,7 +112,7 @@ class _VisionImageState extends State<VisionImage> {
                           Text(
                             "それぞれの道を邁進する強烈な熱量という共通点を縁に、才能を磨き合い、価値を創造する。",
                             style: TextStyle(
-                              fontSize: deviceWidth > 615 ? 20 : 12,
+                              fontSize: deviceWidth > 800 ? 20 : 12,
                               color: const Color(0xFFe6e6e6),
                             ),
                             textAlign: TextAlign.center,
@@ -135,7 +120,7 @@ class _VisionImageState extends State<VisionImage> {
                           Text(
                             "我々Co.Atelierは、夢を追い求める個性たちを繋ぎ合わせ、飛躍させることで社会への貢献を目指します。",
                             style: TextStyle(
-                              fontSize: deviceWidth > 615 ? 20 : 12,
+                              fontSize: deviceWidth > 800 ? 20 : 12,
                               color: const Color(0xFFe6e6e6),
                             ),
                             textAlign: TextAlign.center,

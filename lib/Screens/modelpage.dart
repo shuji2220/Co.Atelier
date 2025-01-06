@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modelhp/components/animatedpositioned.dart';
 import 'package:modelhp/components/header_excepthome.dart';
 import 'package:modelhp/Data/list_items.dart';
 import 'package:modelhp/Screens/modeldetailpage.dart';
@@ -12,7 +13,7 @@ class Modelpage extends StatefulWidget {
 
 class _ModelpageState extends State<Modelpage> {
   late List<bool> _isHovered;
-  bool _isRightDrawerOpen = false;
+  // bool _isRightDrawerOpen = false;
   bool _isLeftDrawerOpen = false;
 
   @override
@@ -21,11 +22,11 @@ class _ModelpageState extends State<Modelpage> {
     _isHovered = List<bool>.filled(listitems.length, false);
   }
 
-  void _toggleRightDrawer() {
-    setState(() {
-      _isRightDrawerOpen = !_isRightDrawerOpen;
-    });
-  }
+  // void _toggleRightDrawer() {
+  //   setState(() {
+  //     _isRightDrawerOpen = !_isRightDrawerOpen;
+  //   });
+  // }
 
   void _toggleLeftDrawer() {
     setState(() {
@@ -35,7 +36,7 @@ class _ModelpageState extends State<Modelpage> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.of(context).size.height;
+    // final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
@@ -52,31 +53,31 @@ class _ModelpageState extends State<Modelpage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        top: 25, bottom: deviceWidth > 650 ? 35 : 10, left: 20),
+                        top: 25, bottom: deviceWidth > 800 ? 35 : 10, left: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextButton(
-                          onPressed: _toggleRightDrawer,
-                          style: TextButton.styleFrom(
-                            side: const BorderSide(
-                                color: Colors.white,
-                                width: 1), // Outline border
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 8),
-                          ),
-                          child: const Text(
-                            '<検索条件を指定する>',
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ),
+                        // TextButton(
+                        //   onPressed: _toggleRightDrawer,
+                        //   style: TextButton.styleFrom(
+                        //     side: const BorderSide(
+                        //         color: Colors.white,
+                        //         width: 1), // Outline border
+                        //     padding: const EdgeInsets.symmetric(
+                        //         horizontal: 8, vertical: 8),
+                        //   ),
+                        //   child: const Text(
+                        //     '<検索条件を指定する>',
+                        //     style: TextStyle(fontSize: 16, color: Colors.white),
+                        //   ),
+                        // ),
                         const SizedBox(
                           height: 10,
                         ),
                         Text(
                           'Model List',
                           style: TextStyle(
-                              fontSize: deviceWidth > 650 ? 45 : 32,
+                              fontSize: deviceWidth > 800 ? 45 : 32,
                               color: const Color(0xFFe6e6e6)),
                         ),
                       ],
@@ -94,16 +95,17 @@ class _ModelpageState extends State<Modelpage> {
                                 scrollDirection: Axis.vertical,
                                 gridDelegate:
                                     SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount:
-                                            deviceWidth > 650 ? 4 : 2),
+                                        crossAxisCount: deviceWidth > 1000
+                                            ? deviceWidth > 650
+                                                ? 4
+                                                : 2
+                                            : 1),
                                 itemCount: listitems.length,
                                 itemBuilder: (context, index) {
                                   // ignore: prefer_interpolation_to_compose_strings
                                   return SizedBox(
-                                    width: deviceWidth > 650
-                                        ? deviceWidth / 5
-                                        : deviceWidth / 2,
-                                    height: deviceHeight / 2,
+                                    width: 300,
+                                    height: 500,
                                     child: Column(
                                       children: [
                                         InkWell(
@@ -126,17 +128,9 @@ class _ModelpageState extends State<Modelpage> {
                                             });
                                           },
                                           child: Container(
-                                            width: deviceWidth > 650
-                                                ? deviceWidth / 6
-                                                : deviceWidth / 3,
-                                            height: deviceWidth > 650
-                                                ? deviceHeight / 3
-                                                : deviceHeight * 0.23,
+                                            width: 180,
+                                            height: 200,
                                             decoration: BoxDecoration(
-                                              border: Border.all(
-                                                color: Colors.grey,
-                                                width: 1,
-                                              ),
                                               image: DecorationImage(
                                                 image: AssetImage(
                                                     listitems[index]['photo1']),
@@ -148,14 +142,14 @@ class _ModelpageState extends State<Modelpage> {
                                           ),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 20,
                                         ),
                                         Text(
                                           listitems[index]['text'],
                                           style: TextStyle(
                                               color: const Color(0xFFe6e6e6),
                                               fontSize:
-                                                  deviceWidth > 650 ? 20 : 16),
+                                                  deviceWidth > 800 ? 20 : 16),
                                         )
                                       ],
                                     ),
@@ -176,72 +170,41 @@ class _ModelpageState extends State<Modelpage> {
               ),
 
               //LeftとRight逆です
-              AnimatedPositioned(
-                duration: const Duration(milliseconds: 300),
-                left: _isRightDrawerOpen ? 0 : -deviceWidth,
-                top: 0,
-                bottom: 0,
-                child: Container(
-                  width: deviceWidth > 650 ? deviceWidth * 0.3 : deviceWidth,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      AppBar(
-                        title: const Text(
-                          '検索条件を指定する',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        automaticallyImplyLeading: false,
-                        backgroundColor: Colors.black,
-                        actions: [
-                          IconButton(
-                            icon: const Icon(Icons.close),
-                            onPressed: _toggleRightDrawer,
-                          ),
-                        ],
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text('ここに検索条件の内容を入力します。'),
-                      ),
-                      // Add more content for the drawer here
-                    ],
-                  ),
-                ),
-              ),
-              AnimatedPositioned(
-                duration: const Duration(milliseconds: 300),
-                right: _isLeftDrawerOpen ? 0 : -deviceWidth,
-                top: 0,
-                bottom: 0,
-                child: Container(
-                  width: deviceWidth > 650 ? deviceWidth * 0.3 : deviceWidth,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      AppBar(
-                        title: const Text(
-                          'SiteMap',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        automaticallyImplyLeading: false,
-                        backgroundColor: Colors.black,
-                        actions: [
-                          IconButton(
-                            icon: const Icon(Icons.close),
-                            onPressed: _toggleLeftDrawer,
-                          ),
-                        ],
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text('SiteMapを表示'),
-                      ),
-                      // Add more content for the drawer here
-                    ],
-                  ),
-                ),
-              ),
+              // AnimatedPositioned(
+              //   duration: const Duration(milliseconds: 300),
+              //   left: _isRightDrawerOpen ? 0 : -deviceWidth,
+              //   top: 0,
+              //   bottom: 0,
+              //   child: Container(
+              //     width: deviceWidth > 800 ? deviceWidth * 0.3 : deviceWidth,
+              //     color: Colors.white,
+              //     child: Column(
+              //       children: [
+              //         AppBar(
+              //           title: const Text(
+              //             '検索条件を指定する',
+              //             style: TextStyle(color: Colors.white),
+              //           ),
+              //           automaticallyImplyLeading: false,
+              //           backgroundColor: Colors.black,
+              //           actions: [
+              //             IconButton(
+              //               icon: const Icon(Icons.close),
+              //               onPressed: _toggleRightDrawer,
+              //             ),
+              //           ],
+              //         ),
+              //         const Padding(
+              //           padding: EdgeInsets.all(16.0),
+              //           child: Text('ここに検索条件の内容を入力します。'),
+              //         ),
+              //         // Add more content for the drawer here
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              CustomAnimatedPositioned(
+                  isDrawerOpen: _isLeftDrawerOpen, deviceWidth: deviceWidth)
             ],
           )),
     );

@@ -42,7 +42,7 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              width: 150,
+              width: 140,
               height: 50,
               child: IconButton(
                   onPressed: () {
@@ -55,7 +55,7 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
                   },
                   icon: Image.asset("lib/assets/images/VisionImage.png")),
             ),
-            if (deviceWidth > 675)
+            if (deviceWidth > 800)
               Row(
                 children: [
                   TextButton(
@@ -109,7 +109,7 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 12),
+            padding: const EdgeInsets.only(right: 10),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -121,7 +121,7 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => OfferPage(),
+                      builder: (context) => const OfferPage(),
                     ),
                   );
                 },
@@ -136,11 +136,11 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(right: 12),
+            padding: const EdgeInsets.only(right: 3),
             child: Container(
                 padding: const EdgeInsets.all(0),
-                width: 40,
-                height: 40,
+                width: 32,
+                height: 32,
                 decoration: BoxDecoration(
                     border:
                         Border.all(color: const Color(0xFF6A6A6A), width: 2)),
@@ -150,7 +150,7 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
                     icon: Icon(
                       _isListIcon ? Icons.close : Icons.list_outlined,
                       color: const Color(0xFF6A6A6A),
-                      size: 30,
+                      size: 24,
                     ))),
           )
         ],

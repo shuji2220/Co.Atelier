@@ -51,7 +51,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
               Center(
                 child: Container(
                   height: deviceHeight,
-                  width: deviceWidth > 650 ? 650 : deviceWidth,
+                  width: deviceWidth > 800 ? 800 : deviceWidth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(widget.item['photo0']),
@@ -72,7 +72,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                               child: ClipRRect(
                                 child: Image.asset(
                                   widget.item['photo1'],
-                                  width: deviceWidth > 650
+                                  width: deviceWidth > 800
                                       ? deviceWidth * 0.18
                                       : deviceWidth * 0.5,
                                   height: 310,
@@ -83,7 +83,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                             Align(
                               alignment: Alignment.topRight,
                               child: SizedBox(
-                                width: deviceWidth > 650
+                                width: deviceWidth > 800
                                     ? deviceWidth * 0.27
                                     : deviceWidth * 0.5,
                                 height: 310,
@@ -94,7 +94,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize:
-                                              deviceWidth > 650 ? 48 : 28),
+                                              deviceWidth > 800 ? 48 : 28),
                                     ),
                                     const SizedBox(
                                       height: 16,
@@ -106,7 +106,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         SizedBox(
-                                          width: deviceWidth > 650
+                                          width: deviceWidth > 800
                                               ? deviceWidth * 0.135
                                               : deviceWidth * 0.25,
                                           child: Column(
@@ -115,7 +115,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsets.only(
-                                                    left: deviceWidth > 650
+                                                    left: deviceWidth > 800
                                                         ? 20
                                                         : 8),
                                                 child: Text(
@@ -123,7 +123,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                   style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize:
-                                                          deviceWidth > 650
+                                                          deviceWidth > 800
                                                               ? 28
                                                               : 12),
                                                 ),
@@ -133,7 +133,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                               ),
                                               Padding(
                                                 padding: EdgeInsets.only(
-                                                    left: deviceWidth > 650
+                                                    left: deviceWidth > 800
                                                         ? 28
                                                         : 16),
                                                 child: Column(
@@ -145,7 +145,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize:
-                                                              deviceWidth > 650
+                                                              deviceWidth > 800
                                                                   ? 20
                                                                   : 12),
                                                     ),
@@ -154,7 +154,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize:
-                                                              deviceWidth > 650
+                                                              deviceWidth > 800
                                                                   ? 20
                                                                   : 12),
                                                     ),
@@ -163,7 +163,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize:
-                                                              deviceWidth > 650
+                                                              deviceWidth > 800
                                                                   ? 20
                                                                   : 12),
                                                     ),
@@ -172,7 +172,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize:
-                                                              deviceWidth > 650
+                                                              deviceWidth > 800
                                                                   ? 20
                                                                   : 12),
                                                     ),
@@ -181,7 +181,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize:
-                                                              deviceWidth > 650
+                                                              deviceWidth > 800
                                                                   ? 20
                                                                   : 12),
                                                     ),
@@ -192,7 +192,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: deviceWidth > 650
+                                          width: deviceWidth > 800
                                               ? deviceWidth * 0.135
                                               : deviceWidth * 0.25,
                                           child: Column(
@@ -203,7 +203,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                 'Category',
                                                 style: TextStyle(
                                                     color: Colors.black,
-                                                    fontSize: deviceWidth > 650
+                                                    fontSize: deviceWidth > 800
                                                         ? 28
                                                         : 12),
                                               ),
@@ -220,7 +220,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize:
-                                                          deviceWidth > 650
+                                                          deviceWidth > 800
                                                               ? 20
                                                               : 12,
                                                     ),
@@ -249,7 +249,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: IconButton(
-                                        iconSize: deviceWidth > 650 ? 80 : 40,
+                                        iconSize: deviceWidth > 800 ? 80 : 40,
                                         icon: const Icon(
                                             Icons.keyboard_arrow_left,
                                             color: Colors.white54),
@@ -260,7 +260,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                 ),
                                 Center(
                                   child: SizedBox(
-                                    width: deviceWidth > 650
+                                    width: deviceWidth > 800
                                         ? deviceWidth * 0.35
                                         : deviceWidth * 0.6,
                                     height: 300,
@@ -304,7 +304,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                                     child: Align(
                                       alignment: Alignment.centerRight,
                                       child: IconButton(
-                                        iconSize: deviceWidth > 650 ? 80 : 40,
+                                        iconSize: deviceWidth > 800 ? 80 : 40,
                                         icon: const Icon(
                                             Icons.keyboard_arrow_right,
                                             color: Colors.white54),

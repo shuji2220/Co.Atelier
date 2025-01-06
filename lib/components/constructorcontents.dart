@@ -1,4 +1,8 @@
 import "package:flutter/material.dart";
+import "package:modelhp/Screens/modelcontents.dart";
+import "package:modelhp/Screens/moviecontents.dart";
+import "package:modelhp/Screens/photocontents.dart";
+import "package:modelhp/Screens/photopartycontents.dart";
 
 class ConstructorContent extends StatefulWidget {
   const ConstructorContent({super.key});
@@ -28,14 +32,21 @@ class _ConstructorContentState extends State<ConstructorContent> {
               colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
             )),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ModelContents(),
+                  ),
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.only(left: 20),
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "モデル事業",
                   style: TextStyle(
-                      fontSize: deviceWidth > 615 ? 40 : 25,
+                      fontSize: deviceWidth > 800 ? 40 : 25,
                       decoration: TextDecoration.underline,
                       decorationColor: const Color(0xFFffffff),
                       color: const Color(0xFFffffff)),
@@ -56,14 +67,21 @@ class _ConstructorContentState extends State<ConstructorContent> {
               colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
             )),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PhotoContents(),
+                  ),
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.only(left: 20),
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "フォト事業",
                   style: TextStyle(
-                      fontSize: deviceWidth > 615 ? 40 : 25,
+                      fontSize: deviceWidth > 800 ? 40 : 25,
                       decoration: TextDecoration.underline,
                       decorationColor: const Color(0xFFffffff),
                       color: const Color(0xFFffffff)),
@@ -84,14 +102,21 @@ class _ConstructorContentState extends State<ConstructorContent> {
               colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
             )),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PhotoPartyContents(),
+                  ),
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.only(left: 20),
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "撮影会企画運営事業",
                   style: TextStyle(
-                      fontSize: deviceWidth > 615 ? 40 : 25,
+                      fontSize: deviceWidth > 800 ? 40 : 25,
                       decoration: TextDecoration.underline,
                       decorationColor: const Color(0xFFffffff),
                       color: const Color(0xFFffffff)),
@@ -112,14 +137,21 @@ class _ConstructorContentState extends State<ConstructorContent> {
               colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
             )),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MovieContents(),
+                  ),
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.only(left: 20),
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "映像事業",
                   style: TextStyle(
-                      fontSize: deviceWidth > 615 ? 40 : 25,
+                      fontSize: deviceWidth > 800 ? 40 : 25,
                       decoration: TextDecoration.underline,
                       decorationColor: const Color(0xFFffffff),
                       color: const Color(0xFFffffff)),

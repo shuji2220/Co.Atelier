@@ -52,7 +52,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
               Center(
                 child: Container(
                   height: deviceHeight,
-                  width: deviceWidth > 650 ? 650 : deviceWidth,
+                  width: deviceWidth > 800 ? 800 : deviceWidth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(widget.photographer['mainphoto']),
@@ -87,7 +87,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                                 Text(
                                   '【活動エリア】',
                                   style: TextStyle(
-                                      fontSize: deviceWidth > 650 ? 24 : 16,
+                                      fontSize: deviceWidth > 800 ? 24 : 16,
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -97,7 +97,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                                   Text(
                                     widget.photographer['活動エリア'][i],
                                     style: TextStyle(
-                                        fontSize: deviceWidth > 650 ? 24 : 16,
+                                        fontSize: deviceWidth > 800 ? 24 : 16,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -108,7 +108,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                               children: [
                                 Text('【ご依頼可能な日時】',
                                     style: TextStyle(
-                                        fontSize: deviceWidth > 650 ? 24 : 16,
+                                        fontSize: deviceWidth > 800 ? 24 : 16,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold)),
                                 for (var i = 0;
@@ -116,7 +116,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                                     i++)
                                   Text(widget.photographer['ご依頼可能な日時'][i],
                                       style: TextStyle(
-                                          fontSize: deviceWidth > 650 ? 24 : 16,
+                                          fontSize: deviceWidth > 800 ? 24 : 16,
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold)),
                               ],
@@ -126,7 +126,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                         const SizedBox(height: 20),
                         Text('【撮影ジャンル】',
                             style: TextStyle(
-                                fontSize: deviceWidth > 650 ? 24 : 16,
+                                fontSize: deviceWidth > 800 ? 24 : 16,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
                         Row(
@@ -140,7 +140,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                                     const EdgeInsets.only(right: 10, left: 10),
                                 child: Text(widget.photographer['撮影ジャンル'][i],
                                     style: TextStyle(
-                                        fontSize: deviceWidth > 650 ? 24 : 16,
+                                        fontSize: deviceWidth > 800 ? 24 : 16,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold)),
                               ),
@@ -153,11 +153,11 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                               children: [
                                 Center(
                                   child: SizedBox(
-                                    height: deviceWidth > 650 ? 300 : 250,
+                                    height: deviceWidth > 800 ? 300 : 250,
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: IconButton(
-                                        iconSize: deviceWidth > 650 ? 80 : 40,
+                                        iconSize: deviceWidth > 800 ? 80 : 40,
                                         icon: const Icon(
                                             Icons.keyboard_arrow_left,
                                             color: Colors.white54),
@@ -168,8 +168,8 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                                 ),
                                 Center(
                                   child: SizedBox(
-                                    width: deviceWidth > 650 ? 400 : 300,
-                                    height: deviceWidth > 650 ? 300 : 250,
+                                    width: deviceWidth > 800 ? 400 : 300,
+                                    height: deviceWidth > 800 ? 300 : 250,
                                     child: PageView.builder(
                                       controller: _pageController,
                                       itemCount: photos.length,
@@ -206,11 +206,11 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                                 ),
                                 Center(
                                   child: SizedBox(
-                                    height: deviceWidth > 650 ? 300 : 250,
+                                    height: deviceWidth > 800 ? 300 : 250,
                                     child: Align(
                                       alignment: Alignment.centerRight,
                                       child: IconButton(
-                                        iconSize: deviceWidth > 650 ? 80 : 40,
+                                        iconSize: deviceWidth > 800 ? 80 : 40,
                                         icon: const Icon(
                                             Icons.keyboard_arrow_right,
                                             color: Colors.white54),

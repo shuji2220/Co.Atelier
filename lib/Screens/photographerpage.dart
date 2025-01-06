@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modelhp/Screens/photographerdetail.dart';
+import 'package:modelhp/components/animatedpositioned.dart';
 import 'package:modelhp/components/header_excepthome.dart';
 import 'package:modelhp/Data/list_items_photographer.dart';
 import 'package:modelhp/components/footerforhomepage.dart';
@@ -12,7 +13,7 @@ class PhotographerPage extends StatefulWidget {
 
 class _PhotographerPageState extends State<PhotographerPage> {
   bool _isHovered = false;
-  bool _isRightDrawerOpen = false;
+  // bool _isRightDrawerOpen = false;
   bool _isLeftDrawerOpen = false;
 
   @override
@@ -26,11 +27,11 @@ class _PhotographerPageState extends State<PhotographerPage> {
     });
   }
 
-  void _toggleRightDrawer() {
-    setState(() {
-      _isRightDrawerOpen = !_isRightDrawerOpen;
-    });
-  }
+  // void _toggleRightDrawer() {
+  //   setState(() {
+  //     _isRightDrawerOpen = !_isRightDrawerOpen;
+  //   });
+  // }
 
   void _toggleLeftDrawer() {
     setState(() {
@@ -59,26 +60,26 @@ class _PhotographerPageState extends State<PhotographerPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextButton(
-                        onPressed: _toggleRightDrawer,
-                        style: TextButton.styleFrom(
-                          side: const BorderSide(
-                              color: Colors.white, width: 1), // Outline border
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 8),
-                        ),
-                        child: const Text(
-                          '<検索条件を指定する>',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
+                      // TextButton(
+                      //   onPressed: _toggleRightDrawer,
+                      //   style: TextButton.styleFrom(
+                      //     side: const BorderSide(
+                      //         color: Colors.white, width: 1), // Outline border
+                      //     padding: const EdgeInsets.symmetric(
+                      //         horizontal: 8, vertical: 8),
+                      //   ),
+                      //   child: const Text(
+                      //     '<検索条件を指定する>',
+                      //     style: TextStyle(fontSize: 16, color: Colors.white),
+                      //   ),
+                      // ),
                       const SizedBox(
                         height: 10,
                       ),
                       Text(
                         'Photographer List',
                         style: TextStyle(
-                            fontSize: deviceWidth > 650 ? 45 : 32,
+                            fontSize: deviceWidth > 800 ? 45 : 32,
                             color: const Color(0xFFe6e6e6)),
                       ),
                     ],
@@ -113,7 +114,7 @@ class _PhotographerPageState extends State<PhotographerPage> {
                                   const SizedBox(
                                     height: 16,
                                   ),
-                                  deviceWidth > 650
+                                  deviceWidth > 800
                                       ? Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -288,72 +289,41 @@ class _PhotographerPageState extends State<PhotographerPage> {
               ],
             ),
             //LeftとRight逆です
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 300),
-              left: _isRightDrawerOpen ? 0 : -deviceWidth,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: deviceWidth > 650 ? deviceWidth * 0.3 : deviceWidth,
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    AppBar(
-                      title: const Text(
-                        '検索条件を指定する',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      automaticallyImplyLeading: false,
-                      backgroundColor: Colors.black,
-                      actions: [
-                        IconButton(
-                          icon: const Icon(Icons.close),
-                          onPressed: _toggleRightDrawer,
-                        ),
-                      ],
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text('ここに検索条件の内容を入力します。'),
-                    ),
-                    // Add more content for the drawer here
-                  ],
-                ),
-              ),
-            ),
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 300),
-              right: _isLeftDrawerOpen ? 0 : -deviceWidth,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: deviceWidth > 650 ? deviceWidth * 0.3 : deviceWidth,
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    AppBar(
-                      title: const Text(
-                        'SiteMap',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      automaticallyImplyLeading: false,
-                      backgroundColor: Colors.black,
-                      actions: [
-                        IconButton(
-                          icon: const Icon(Icons.close),
-                          onPressed: _toggleLeftDrawer,
-                        ),
-                      ],
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text('SiteMapを表示'),
-                    ),
-                    // Add more content for the drawer here
-                  ],
-                ),
-              ),
-            ),
+            // AnimatedPositioned(
+            //   duration: const Duration(milliseconds: 300),
+            //   left: _isRightDrawerOpen ? 0 : -deviceWidth,
+            //   top: 0,
+            //   bottom: 0,
+            //   child: Container(
+            //     width: deviceWidth > 800 ? deviceWidth * 0.3 : deviceWidth,
+            //     color: Colors.white,
+            //     child: Column(
+            //       children: [
+            //         AppBar(
+            //           title: const Text(
+            //             '検索条件を指定する',
+            //             style: TextStyle(color: Colors.white),
+            //           ),
+            //           automaticallyImplyLeading: false,
+            //           backgroundColor: Colors.black,
+            //           actions: [
+            //             IconButton(
+            //               icon: const Icon(Icons.close),
+            //               onPressed: _toggleRightDrawer,
+            //             ),
+            //           ],
+            //         ),
+            //         const Padding(
+            //           padding: EdgeInsets.all(16.0),
+            //           child: Text('ここに検索条件の内容を入力します。'),
+            //         ),
+            //         // Add more content for the drawer here
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            CustomAnimatedPositioned(
+                isDrawerOpen: _isLeftDrawerOpen, deviceWidth: deviceWidth)
           ],
         ),
       ),

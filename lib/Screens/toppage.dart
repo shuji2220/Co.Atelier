@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import "package:modelhp/components/constructorcontents.dart";
 import 'package:modelhp/components/cardcousourle.dart';
 import 'package:modelhp/components/visionimage.dart';
 import 'package:modelhp/components/header_forhomepage.dart';
 import 'package:modelhp/components/modelfirmcontent.dart';
 import 'package:modelhp/components/footerforhomepage.dart';
+import 'package:modelhp/components/animatedpositioned.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -23,8 +23,15 @@ class _HomepageState extends State<Homepage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.width;
+    final deviceHeight = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
@@ -32,116 +39,77 @@ class _HomepageState extends State<Homepage> {
           preferredSize: const Size.fromHeight(60),
           child: HeaderforHomepage(onToggleDrawer: _toggleDrawer),
         ),
-        extendBodyBehindAppBar: true,
         body: Stack(
           children: [
-            SingleChildScrollView(
-              controller: context.scrollController,
-              child: Column(
-                children: [
-                  const Cardcousourle(),
-                  const SizedBox(
-                    height: 60,
+            CustomScrollView(
+              slivers: [
+                SliverAppBar(
+                  automaticallyImplyLeading: false,
+                  backgroundColor: Colors.black,
+                  expandedHeight: deviceHeight * 7 / 8,
+                  flexibleSpace: const FlexibleSpaceBar(
+                    background: Cardcousourle(),
                   ),
-                  Container(
-                      padding: const EdgeInsets.only(left: 26),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                "01/",
-                                style: TextStyle(
-                                  fontSize: deviceWidth > 615 ? 64 : 40,
-                                  fontWeight: FontWeight.w900,
-                                  color: const Color(0xFFffffff),
-                                ),
-                              ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "理念",
-                                    style: TextStyle(
-                                      fontSize: deviceWidth > 615 ? 12 : 8,
-                                      color: const Color(0xFFffffff),
-                                    ),
-                                  ),
-                                  Text(
-                                    "Vision",
-                                    style: TextStyle(
-                                      fontSize: deviceWidth > 615 ? 28 : 18,
-                                      fontWeight: FontWeight.w400,
-                                      color: const Color(0xFFffffff),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                  SizedBox(
-                    height: deviceWidth > 650 ? 40 : 0,
-                  ),
-                  const VisionImage(),
-                  const SizedBox(
-                    height: 60,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(left: 26),
-                    child: Column(
-                      children: [
-                        Row(
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(left: 26),
+                        child: Column(
                           children: [
-                            Text(
-                              "02/",
-                              style: TextStyle(
-                                fontSize: deviceWidth > 615 ? 64 : 40,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFffffff),
-                              ),
-                            ),
-                            Column(
+                            Row(
                               children: [
                                 Text(
-                                  "事業概要",
+                                  "01/",
                                   style: TextStyle(
-                                    fontSize: deviceWidth > 615 ? 12 : 8,
+                                    fontSize: deviceWidth > 800 ? 64 : 40,
+                                    fontWeight: FontWeight.w900,
                                     color: const Color(0xFFffffff),
                                   ),
                                 ),
-                                Text(
-                                  "Buisiness",
-                                  style: TextStyle(
-                                    fontSize: deviceWidth > 615 ? 28 : 18,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xFFffffff),
-                                  ),
-                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      "理念",
+                                      style: TextStyle(
+                                        fontSize: deviceWidth > 800 ? 12 : 8,
+                                        color: const Color(0xFFffffff),
+                                      ),
+                                    ),
+                                    Text(
+                                      "Vision",
+                                      style: TextStyle(
+                                        fontSize: deviceWidth > 800 ? 28 : 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: const Color(0xFFffffff),
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
                             )
                           ],
-                        )
-                      ],
+                        )),
+                    SizedBox(
+                      height: deviceWidth > 650 ? 40 : 0,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const ConstructorContent(),
-                  const SizedBox(
-                    height: 60,
-                  ),
-                  Container(
+                    const VisionImage(),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    Container(
                       padding: const EdgeInsets.only(left: 26),
                       child: Column(
                         children: [
                           Row(
                             children: [
                               Text(
-                                "03/",
+                                "02/",
                                 style: TextStyle(
-                                  fontSize: deviceWidth > 615 ? 64 : 40,
+                                  fontSize: deviceWidth > 800 ? 64 : 40,
                                   fontWeight: FontWeight.w900,
                                   color: const Color(0xFFffffff),
                                 ),
@@ -149,16 +117,16 @@ class _HomepageState extends State<Homepage> {
                               Column(
                                 children: [
                                   Text(
-                                    "事務所概要",
+                                    "事業概要",
                                     style: TextStyle(
-                                      fontSize: deviceWidth > 615 ? 12 : 8,
+                                      fontSize: deviceWidth > 800 ? 12 : 8,
                                       color: const Color(0xFFffffff),
                                     ),
                                   ),
                                   Text(
-                                    "Model Firm",
+                                    "Buisiness",
                                     style: TextStyle(
-                                      fontSize: deviceWidth > 615 ? 28 : 18,
+                                      fontSize: deviceWidth > 800 ? 28 : 18,
                                       fontWeight: FontWeight.w400,
                                       color: const Color(0xFFffffff),
                                     ),
@@ -168,45 +136,66 @@ class _HomepageState extends State<Homepage> {
                             ],
                           )
                         ],
-                      )),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const ModelFirmContent(),
-                  const SizedBox(
-                    height: 60,
-                  ),
-                  const FooterforHomepage(),
-                ],
-              ),
-            ),
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 300),
-              right: _isDrawerOpen ? 0 : -deviceWidth,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: deviceWidth > 650 ? deviceWidth * 0.3 : deviceWidth,
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    AppBar(
-                      title: const Text(
-                        'SiteMap',
-                        style: TextStyle(color: Colors.white),
                       ),
-                      automaticallyImplyLeading: false,
-                      backgroundColor: Colors.black,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text('SiteMapを表示'),
+                    const SizedBox(
+                      height: 40,
                     ),
-                    // Add more content for the drawer here
-                  ],
-                ),
-              ),
+                    const ConstructorContent(),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(left: 26),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  "03/",
+                                  style: TextStyle(
+                                    fontSize: deviceWidth > 800 ? 64 : 40,
+                                    fontWeight: FontWeight.w900,
+                                    color: const Color(0xFFffffff),
+                                  ),
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      "事務所概要",
+                                      style: TextStyle(
+                                        fontSize: deviceWidth > 800 ? 12 : 8,
+                                        color: const Color(0xFFffffff),
+                                      ),
+                                    ),
+                                    Text(
+                                      "Model Firm",
+                                      style: TextStyle(
+                                        fontSize: deviceWidth > 800 ? 28 : 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: const Color(0xFFffffff),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        )),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const ModelFirmContent(),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    const FooterforHomepage(),
+                  ]),
+                )
+              ],
             ),
+            CustomAnimatedPositioned(
+                isDrawerOpen: _isDrawerOpen, deviceWidth: deviceWidth)
           ],
         ),
       ),

@@ -36,6 +36,7 @@ dependencies:
   flutter_animate_on_scroll: ^0.1.1
   google_fonts: ^4.0.4
   animate_do: ^3.3.4
+  pdfx: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +60,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - lib/assets/
+    - lib/assets/card.pdf
     - lib/assets/images/Home1.jpg
     - lib/assets/images/Home2.jpg
     - lib/assets/images/Home3.jpg
@@ -67,24 +70,7 @@ flutter:
     - lib/assets/images/Home6.jpg
     - lib/assets/images/VisionImage.png
     - lib/assets/images/CardCousorle.png
-    - lib/assets/images/mapsforhomepage/mapsforhp1-1.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp1-2.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp1-3.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp1-4.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp1-5.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp1-6.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp2-1.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp2-2.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp2-3.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp2-4.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp2-5.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp2-6.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp3-1.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp3-2.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp3-3.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp3-4.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp3-5.jpg
-    - lib/assets/images/mapsforhomepage/mapsforhp3-6.jpg
+    - lib/assets/images/mapsforhomepage/mapsforhp.jpg
     - lib/assets/images/modelpage/model1/modelpage1.jpg
     - lib/assets/images/modelpage/model1/modelpage2.jpg
     - lib/assets/images/modelpage/model1/modelpage3.jpg
@@ -97,7 +83,27 @@ flutter:
     - lib/assets/images/photographerpage/kazukinishimura/photograph3.jpg
     - lib/assets/images/photographerpage/kazukinishimura/photograph4.jpg
     - lib/assets/images/photographerpage/kazukinishimura/photograph5.jpg
-
+    - lib/assets/images/modelcontentpage/modelcontentpage1.jpg
+    - lib/assets/images/modelcontentpage/modelcontentpage2.jpg
+    - lib/assets/images/modelcontentpage/modelcontentpage3.jpg
+    - lib/assets/images/modelcontentpage/modelcontentpage4.jpg
+    - lib/assets/images/modelcontentpage/modelcontentpage5.jpg
+    - lib/assets/images/photocontentpage/photocontent1.jpg
+    - lib/assets/images/photocontentpage/photocontent2.jpg
+    - lib/assets/images/photocontentpage/photocontent3.jpg
+    - lib/assets/images/photocontentpage/photocontent4.jpg
+    - lib/assets/images/photocontentpage/photocontent5.jpg
+    - lib/assets/images/photocontentpage/photocontent6.jpg
+    - lib/assets/images/photopartycontentpage/photopartypage1.jpg
+    - lib/assets/images/photopartycontentpage/photopartypage2.jpg
+    - lib/assets/images/photopartycontentpage/photopartypage3.jpg
+    - lib/assets/images/photopartycontentpage/photopartypage4.jpg
+    - lib/assets/images/photopartycontentpage/photopartypage5.jpg
+    - lib/assets/images/moviecontentpage/moviecontentpage1.jpg
+    - lib/assets/images/moviecontentpage/moviecontentpage2.jpg
+    - lib/assets/images/moviecontentpage/moviecontentpage3.jpg
+    - lib/assets/images/Instagram.png
+    
   fonts:
     - family: Zen Antique
       fonts:
