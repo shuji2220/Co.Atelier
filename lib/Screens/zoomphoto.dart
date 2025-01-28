@@ -10,10 +10,8 @@ class ZoomPhoto extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          Flexible(
-            child: Center(
-              child: Image.asset(photoPath),
-            ),
+          Center(
+            child: Image.asset(photoPath),
           ),
           Positioned(
             top: 0,

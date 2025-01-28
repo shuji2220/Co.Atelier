@@ -30,7 +30,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 'モデル事務所名',
@@ -54,7 +54,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 'Co.Atelier',
@@ -76,7 +76,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 '代表',
@@ -96,7 +96,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 '堀本修治',
@@ -118,8 +118,8 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
-              padding: const EdgeInsets.only(top: 30, bottom: 90),
+              width: deviceWidth > 800 ? 300 : 150,
+              padding: const EdgeInsets.only(top: 30, bottom: 114),
               child: Text(
                 '役員',
                 style: TextStyle(
@@ -139,18 +139,11 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding:
                   EdgeInsets.only(top: 30, bottom: deviceWidth > 800 ? 30 : 51),
               child: Column(
                 children: [
-                  Text(
-                    '吉田　陵',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: deviceWidth > 800 ? 20 : 15),
-                    textAlign: TextAlign.left,
-                  ),
                   Text(
                     '沖田篤哉',
                     style: TextStyle(
@@ -159,7 +152,21 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                     textAlign: TextAlign.left,
                   ),
                   Text(
+                    '鬼塚樹蘭',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: deviceWidth > 800 ? 20 : 15),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
                     '西村一輝',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: deviceWidth > 800 ? 20 : 15),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    '吉田　陵',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: deviceWidth > 800 ? 20 : 15),
@@ -181,7 +188,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 '事務所所属人数',
@@ -201,10 +208,10 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
-                '○○人(2025年2月)',
+                '27人(2025年2月)',
                 style: TextStyle(
                     color: Colors.white, fontSize: deviceWidth > 800 ? 20 : 15),
                 textAlign: TextAlign.left,
@@ -223,7 +230,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 '活動拠点',
@@ -243,7 +250,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 '福岡県福岡市',
@@ -265,7 +272,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Text(
                 'E-mail',
@@ -285,7 +292,7 @@ class _ModelFirmContentState extends State<ModelFirmContent> {
                   width: 1,
                 ),
               )),
-              width: deviceWidth > 800 ? 300 : 160,
+              width: deviceWidth > 800 ? 300 : 150,
               padding:
                   EdgeInsets.only(top: 30, bottom: deviceWidth > 800 ? 30 : 32),
               child: Text(

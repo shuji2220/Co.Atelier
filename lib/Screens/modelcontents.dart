@@ -117,13 +117,21 @@ class _ModelContentsState extends State<ModelContents> {
                             'モデル事業について',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             'Co.Atelierでは多くのモデルが活躍しています。',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -131,12 +139,13 @@ class _ModelContentsState extends State<ModelContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     '皆様のご要望に沿った最適なモデルを\n派遣させていただきます',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           deviceWidth > 900
@@ -145,26 +154,41 @@ class _ModelContentsState extends State<ModelContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'ご期待以上のモデルと共に\n素晴らしい仕事をしてみませんか？',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
+                          Text(
+                            '*価格は交渉次第で変更となります。',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
+                          ),
                           Text(
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 32 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),
@@ -187,13 +211,21 @@ class _ModelContentsState extends State<ModelContents> {
                             'ポートレート撮影モデル派遣',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             'ポートレート撮影用のモデルをお探しですか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -201,12 +233,13 @@ class _ModelContentsState extends State<ModelContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Co.Atelierで最適なポートレート撮影用の\nモデルをお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -244,7 +277,7 @@ class _ModelContentsState extends State<ModelContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '基本価格\n(1時間単位)',
+                                      '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize:
@@ -258,65 +291,28 @@ class _ModelContentsState extends State<ModelContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      'ベーシックプラン',
+                                      'ポートレート撮影モデル派遣',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・撮影時間に合わせてモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。',
+                                      '・撮影時間に合わせてモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。\n・対応時間2時間を想定。',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '',
+                                      '23,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'プレミアムプラン',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・撮影時間に合わせてモデルが現地へ赴きます。\n・ヘアメイク及びスタイリストも赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -327,14 +323,18 @@ class _ModelContentsState extends State<ModelContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 20 : 12),
                               )),
                         ],
                       ),
@@ -354,29 +354,38 @@ class _ModelContentsState extends State<ModelContents> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            'イベント・展示会モデル派遣',
+                            'イベント・ファッションショーモデル派遣',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
-                            'イベントや展示会でモデルを起用してみませんか？',
+                            'イベントやファッションショーでモデルを起用してみませんか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
-                                  'Co.Atelierで最適なイベントや展示会用のモデルをお届けします。',
+                                  'Co.Atelierで最適なイベントやファッションショー用のモデルをお届けします。',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    'Co.Atelierで最適なイベントや展示会用の\nモデルをお届けします。',
+                                    'Co.Atelierで最適なイベントやファッションショー用\nのモデルをお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -414,7 +423,7 @@ class _ModelContentsState extends State<ModelContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '基本価格(1時間単位)',
+                                      '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize:
@@ -428,117 +437,50 @@ class _ModelContentsState extends State<ModelContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '展示会・ブーススタッフモデル',
+                                      'イベント・ファッションショー\nモデル派遣',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・展示会やブーススタッフモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。',
+                                      '・モデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。\n・対応時間は4時間を想定してます。',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '',
+                                      '35,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
                               ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'セミナー・パネルディスカッションモデル',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・セミナー等にモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'ファッションショーモデル',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・ファッションショーにモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              )
                             ],
                           ),
                           Text(
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 20 : 12),
                               )),
                         ],
                       ),
@@ -561,7 +503,11 @@ class _ModelContentsState extends State<ModelContents> {
                             '映像用モデル派遣',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             '映像撮影用のモデルをお探しですか？',
@@ -575,12 +521,13 @@ class _ModelContentsState extends State<ModelContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Co.Atelierで最適な映像撮影用の\nモデルをお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -618,7 +565,7 @@ class _ModelContentsState extends State<ModelContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '基本価格(1時間単位)',
+                                      '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize:
@@ -635,28 +582,25 @@ class _ModelContentsState extends State<ModelContents> {
                                       '映像撮影用モデルプラン',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・撮影時間に合わせてモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。\n・セリフ暗記対応\n・パフォーマンス対応',
+                                      '・撮影時間に合わせてモデルが現地へ赴きます。\n・モデルを複数人ご希望の場合は人数分料金がかかります。\n・セリフ暗記対応\n・パフォーマンス対応\n・対応時間は8時間を想定します。',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '',
+                                      '57,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -667,14 +611,18 @@ class _ModelContentsState extends State<ModelContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 20 : 12),
                               )),
                         ],
                       ),

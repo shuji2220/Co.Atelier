@@ -42,16 +42,17 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              width: 140,
+              width: 130,
               height: 50,
               child: IconButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Homepage(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const Homepage(),
+                            transitionDuration: Duration.zero));
                   },
                   icon: Image.asset("lib/assets/images/VisionImage.png")),
             ),
@@ -61,11 +62,12 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
                   TextButton(
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Homepage(),
-                          ),
-                        );
+                            context,
+                            PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) =>
+                                        const Homepage(),
+                                transitionDuration: Duration.zero));
                       },
                       child: const Text("Top",
                           style: TextStyle(
@@ -76,11 +78,12 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
                   TextButton(
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Modelpage(),
-                          ),
-                        );
+                            context,
+                            PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) =>
+                                        const Modelpage(),
+                                transitionDuration: Duration.zero));
                       },
                       child: const Text("Model",
                           style: TextStyle(
@@ -91,11 +94,12 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
                   TextButton(
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PhotographerPage(),
-                          ),
-                        );
+                            context,
+                            PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation, secondaryAnimation) =>
+                                        const PhotographerPage(),
+                                transitionDuration: Duration.zero));
                       },
                       child: const Text("Photographer",
                           style: TextStyle(
@@ -109,29 +113,24 @@ class _HeaderforExceptHomepageState extends State<HeaderforExceptHomepage> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: const Color(0xFF6A6A6A), width: 2)),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFE3E3E3).withOpacity(0.8)),
-                onPressed: () {
-                  Navigator.push(
+            padding: const EdgeInsets.only(right: 6),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFE3E3E3).withOpacity(0.8)),
+              onPressed: () {
+                Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const OfferPage(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  "案件依頼",
-                  style: TextStyle(
-                      color: Color(0xFF6A6A6A),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
-                ),
+                    PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            const OfferPage(),
+                        transitionDuration: Duration.zero));
+              },
+              child: const Text(
+                "案件依頼",
+                style: TextStyle(
+                    color: Color(0xFF6A6A6A),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),

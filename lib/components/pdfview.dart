@@ -33,9 +33,13 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          Flexible(
-            child: PdfView(
-              controller: _pdfController,
+          Positioned.fill(
+            child: InteractiveViewer(
+              panEnabled: true,
+              scaleEnabled: true,
+              child: PdfView(
+                controller: _pdfController,
+              ),
             ),
           ),
           Positioned(

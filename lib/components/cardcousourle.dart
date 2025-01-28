@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 
 class Cardcousourle extends StatefulWidget {
   const Cardcousourle({super.key});
@@ -28,15 +27,14 @@ class _CardcousourleState extends State<Cardcousourle> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+    final deviceHeight = MediaQuery.of(context).size.height;
 
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
         CarouselSlider.builder(
           options: CarouselOptions(
-            height: deviceHeight * 7 / 8,
             initialPage: 0,
             autoPlay: true,
             onPageChanged: (index, reason) => setState(() {
@@ -67,18 +65,13 @@ class _CardcousourleState extends State<Cardcousourle> {
             );
           },
         ),
-        FadeIn(
-          globalKey: GlobalKey(),
-          repeat: false,
-          duration: 4.seconds,
-          child: Container(
-            width: 1000,
-            height: 348.75,
-            alignment: Alignment.center,
-            child: Opacity(
-                opacity: 0.8,
-                child: Image.asset("lib/assets/images/CardCousorle.png")),
-          ),
+        Container(
+          width: deviceWidth,
+          height: deviceHeight * 7 / 8,
+          alignment: Alignment.center,
+          child: Opacity(
+              opacity: 0.8,
+              child: Image.asset("lib/assets/images/CardCousorle.png")),
         ),
       ],
     );

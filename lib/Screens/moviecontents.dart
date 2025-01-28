@@ -3,6 +3,7 @@ import 'package:modelhp/components/animatedpositioned.dart';
 import 'package:modelhp/components/footerforhomepage.dart';
 import 'package:modelhp/components/header_excepthome.dart';
 import 'package:modelhp/components/pdfview.dart';
+import 'package:video_player/video_player.dart';
 
 class MovieContents extends StatefulWidget {
   const MovieContents({super.key});
@@ -13,9 +14,9 @@ class MovieContents extends StatefulWidget {
 
 class _MovieContentsState extends State<MovieContents> {
   bool _isDrawerOpen = false;
+  late VideoPlayerController _controller;
   final ScrollController _scrollController = ScrollController();
-  String _currentImage =
-      'lib/assets/images/moviecontentpage/moviecontentpage1.jpg';
+
   double deviceheight = 0.0;
 
   void _toggleDrawer() {
@@ -27,30 +28,20 @@ class _MovieContentsState extends State<MovieContents> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      setState(() {
-        deviceheight = MediaQuery.of(context).size.height;
-      });
-    });
-    _scrollController.addListener(() {
-      setState(() {
-        if (_scrollController.offset > 1000 + deviceheight) {
-          _currentImage =
-              'lib/assets/images/moviecontentpage/moviecontentpage3.jpg';
-        } else if (_scrollController.offset > 500) {
-          _currentImage =
-              'lib/assets/images/moviecontentpage/moviecontentpage2.jpg';
-        } else {
-          _currentImage =
-              'lib/assets/images/moviecontentpage/moviecontentpage1.jpg';
-        }
-      });
-    });
+    _controller = VideoPlayerController.asset(
+        'lib/assets/images/moviecontentpage/video.mp4') // Replace with your video asset path
+      ..initialize().then((_) {
+        setState(() {});
+        _controller.setVolume(
+            0); // Ensure the first frame is shown after the video is initialized
+        _controller.play(); // Automatically play the video after initialization
+      })
+      ..setLooping(true);
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -80,14 +71,12 @@ class _MovieContentsState extends State<MovieContents> {
           Stack(
             children: [
               Positioned.fill(
-                child: SizedBox(
-                  width: deviceWidth,
-                  height: 500,
-                  child: Image.asset(
-                    _currentImage,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                child: _controller.value.isInitialized
+                    ? AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: VideoPlayer(_controller),
+                      )
+                    : const Center(child: CircularProgressIndicator()),
               ),
               SingleChildScrollView(
                 controller: _scrollController,
@@ -111,54 +100,78 @@ class _MovieContentsState extends State<MovieContents> {
                             '映像事業について',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
-                            'Co.AtelierではPR動画撮影及び編集加工を行っています',
+                            'Co.AtelierではPRやショート動画撮影及び編集加工を行っています',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
-                                  '皆様のご要望に沿ったPR動画を作成しております',
+                                  '皆様のご要望に沿った動画を作成しております',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    '皆様のご要望に沿ったPR動画を\n作成しております',
+                                    '皆様のご要望に沿った動画を\n作成しております',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           deviceWidth > 900
                               ? const Text(
-                                  'ご期待以上のPR動画の作成をご依頼してみませんか？',
+                                  'ご期待以上の動画の作成をご依頼してみませんか？',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    'ご期待以上のPR動画の作成を\nご依頼してみませんか？',
+                                    'ご期待以上の動画の作成を\nご依頼してみませんか？',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
+                          Text(
+                            '*価格は交渉次第で変更となります。',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
+                          ),
                           Text(
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 32 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),
@@ -178,29 +191,38 @@ class _MovieContentsState extends State<MovieContents> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            'PR動画作成メニュー',
+                            '動画作成メニュー',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
-                            'PR動画の作成をご要望ですか？',
+                            '動画の作成をご要望ですか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
-                                  'Co.Atelierで最高のPR動画をお届けします。',
+                                  'Co.Atelierで最高の動画をお届けします。',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                    'Co.Atelierで最高のPR動画\nをお届けします。',
+                                    'Co.Atelierで最高の動画\nをお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -255,28 +277,25 @@ class _MovieContentsState extends State<MovieContents> {
                                       'ショート動画作成プラン',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・動画用の撮影を行います。\n・最高の動画編集をご提供します。',
+                                      '・動画用の撮影を行います。\n・最高の動画編集をご提供します。\n・最大撮影対応時間：6時間',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '',
+                                      '34,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -289,28 +308,25 @@ class _MovieContentsState extends State<MovieContents> {
                                       'インタビュー動画作成プラン',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・インタビュー動画の撮影を行います。\n・最高の動画編集をご提供します。',
+                                      '・インタビュー動画の撮影を行います。\n・最高の動画編集をご提供します。\n・最大撮影対応時間：6時間',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '',
+                                      '54,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -321,23 +337,20 @@ class _MovieContentsState extends State<MovieContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
-                      ),
-                    ),
-                    Opacity(
-                      opacity: 1,
-                      child: SizedBox(
-                        width: deviceWidth,
-                        height: 500,
                       ),
                     ),
                     Opacity(

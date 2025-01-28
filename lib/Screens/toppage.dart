@@ -46,15 +46,17 @@ class _HomepageState extends State<Homepage> {
                 SliverAppBar(
                   automaticallyImplyLeading: false,
                   backgroundColor: Colors.black,
-                  expandedHeight: deviceHeight * 7 / 8,
+                  expandedHeight: deviceWidth > deviceHeight
+                      ? deviceHeight * 7 / 8
+                      : deviceHeight / 2,
                   flexibleSpace: const FlexibleSpaceBar(
                     background: Cardcousourle(),
                   ),
                 ),
                 SliverList(
                   delegate: SliverChildListDelegate([
-                    const SizedBox(
-                      height: 60,
+                    SizedBox(
+                      height: deviceWidth > 650 ? 40 : 10,
                     ),
                     Container(
                         padding: const EdgeInsets.only(left: 26),
@@ -94,11 +96,11 @@ class _HomepageState extends State<Homepage> {
                           ],
                         )),
                     SizedBox(
-                      height: deviceWidth > 650 ? 40 : 0,
+                      height: deviceWidth > 650 ? 40 : 10,
                     ),
                     const VisionImage(),
-                    const SizedBox(
-                      height: 60,
+                    SizedBox(
+                      height: deviceWidth > 650 ? 40 : 10,
                     ),
                     Container(
                       padding: const EdgeInsets.only(left: 26),

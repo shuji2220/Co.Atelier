@@ -20,141 +20,153 @@ class _ConstructorContentState extends State<ConstructorContent> {
 
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 10),
-          child: Ink(
-            width: deviceWidth * 127 / 128,
-            height: 100,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("lib/assets/images/Home6.jpg"),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
-            )),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ModelContents(),
+        Container(
+          color: Colors.black.withOpacity(0.6),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: Ink(
+              width: deviceWidth * 127 / 128,
+              height: 100,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage("lib/assets/images/m.jpg"),
+                fit: BoxFit.cover,
+              )),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const ModelContents(),
+                          transitionDuration: Duration.zero));
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "モデル事業",
+                    style: TextStyle(
+                        fontSize: deviceWidth > 800 ? 40 : 25,
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color(0xFFffffff),
+                        color: const Color(0xFFffffff)),
                   ),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(left: 20),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "モデル事業",
-                  style: TextStyle(
-                      fontSize: deviceWidth > 800 ? 40 : 25,
-                      decoration: TextDecoration.underline,
-                      decorationColor: const Color(0xFFffffff),
-                      color: const Color(0xFFffffff)),
                 ),
               ),
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 10),
-          child: Ink(
-            width: deviceWidth * 127 / 128,
-            height: 100,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("lib/assets/images/Home1.jpg"),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
-            )),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const PhotoContents(),
+        Container(
+          color: Colors.black.withOpacity(0.6),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: Ink(
+              width: deviceWidth * 127 / 128,
+              height: 100,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage("lib/assets/images/p.jpg"),
+                fit: BoxFit.cover,
+              )),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const PhotoContents(),
+                          transitionDuration: Duration.zero));
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "フォト事業",
+                    style: TextStyle(
+                        fontSize: deviceWidth > 800 ? 40 : 25,
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color(0xFFffffff),
+                        color: const Color(0xFFffffff)),
                   ),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(left: 20),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "フォト事業",
-                  style: TextStyle(
-                      fontSize: deviceWidth > 800 ? 40 : 25,
-                      decoration: TextDecoration.underline,
-                      decorationColor: const Color(0xFFffffff),
-                      color: const Color(0xFFffffff)),
                 ),
               ),
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 10),
-          child: Ink(
-            width: deviceWidth * 127 / 128,
-            height: 100,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("lib/assets/images/Home2.jpg"),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
-            )),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const PhotoPartyContents(),
+        Container(
+          color: Colors.black.withOpacity(0.6),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: Ink(
+              width: deviceWidth * 127 / 128,
+              height: 100,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage("lib/assets/images/s.jpg"),
+                fit: BoxFit.cover,
+              )),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const PhotoPartyContents(),
+                          transitionDuration: Duration.zero));
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "撮影会企画運営事業",
+                    style: TextStyle(
+                        fontSize: deviceWidth > 800 ? 40 : 25,
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color(0xFFffffff),
+                        color: const Color(0xFFffffff)),
                   ),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(left: 20),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "撮影会企画運営事業",
-                  style: TextStyle(
-                      fontSize: deviceWidth > 800 ? 40 : 25,
-                      decoration: TextDecoration.underline,
-                      decorationColor: const Color(0xFFffffff),
-                      color: const Color(0xFFffffff)),
                 ),
               ),
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 10),
-          child: Ink(
-            width: deviceWidth * 127 / 128,
-            height: 100,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("lib/assets/images/Home3.jpg"),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black54, BlendMode.srcATop),
-            )),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MovieContents(),
+        Container(
+          color: Colors.black.withOpacity(0.6),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: Ink(
+              width: deviceWidth * 127 / 128,
+              height: 100,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage("lib/assets/images/e.jpg"),
+                fit: BoxFit.cover,
+              )),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const MovieContents(),
+                          transitionDuration: Duration.zero));
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "映像事業",
+                    style: TextStyle(
+                        fontSize: deviceWidth > 800 ? 40 : 25,
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color(0xFFffffff),
+                        color: const Color(0xFFffffff)),
                   ),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(left: 20),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "映像事業",
-                  style: TextStyle(
-                      fontSize: deviceWidth > 800 ? 40 : 25,
-                      decoration: TextDecoration.underline,
-                      decorationColor: const Color(0xFFffffff),
-                      color: const Color(0xFFffffff)),
                 ),
               ),
             ),

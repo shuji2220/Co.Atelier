@@ -56,7 +56,10 @@ class _PhotographerPageState extends State<PhotographerPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 25, bottom: 10, left: 20),
+                  padding: EdgeInsets.only(
+                      top: deviceWidth > 800 ? 25 : 8,
+                      bottom: deviceWidth > 800 ? 25 : 8,
+                      left: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -73,13 +76,13 @@ class _PhotographerPageState extends State<PhotographerPage> {
                       //     style: TextStyle(fontSize: 16, color: Colors.white),
                       //   ),
                       // ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: deviceWidth > 800 ? 10 : 2,
                       ),
                       Text(
                         'Photographer List',
                         style: TextStyle(
-                            fontSize: deviceWidth > 800 ? 45 : 32,
+                            fontSize: deviceWidth > 800 ? 45 : 28,
                             color: const Color(0xFFe6e6e6)),
                       ),
                     ],
@@ -158,15 +161,17 @@ class _PhotographerPageState extends State<PhotographerPage> {
                                                 child: TextButton(
                                                   onPressed: () {
                                                     Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            PhotographerDetail(
-                                                          photographer:
-                                                              photographer,
-                                                        ),
-                                                      ),
-                                                    );
+                                                        context,
+                                                        PageRouteBuilder(
+                                                            pageBuilder: (context,
+                                                                    animation,
+                                                                    secondaryAnimation) =>
+                                                                PhotographerDetail(
+                                                                  photographer:
+                                                                      photographer,
+                                                                ),
+                                                            transitionDuration:
+                                                                Duration.zero));
                                                   },
                                                   child: const Text(
                                                     'View All',
@@ -188,7 +193,9 @@ class _PhotographerPageState extends State<PhotographerPage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Row(
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 const Text(
                                                   '【活動エリア】',
@@ -197,22 +204,27 @@ class _PhotographerPageState extends State<PhotographerPage> {
                                                     color: Color(0xFFe6e6e6),
                                                   ),
                                                 ),
-                                                ...photographer['活動エリア']
-                                                    .map((area) {
-                                                  return Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            left: 8),
-                                                    child: Text(
-                                                      area,
-                                                      style: const TextStyle(
-                                                        fontSize: 16,
-                                                        color:
-                                                            Color(0xFFe6e6e6),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }).toList(),
+                                                Row(
+                                                  children: [
+                                                    ...photographer['活動エリア']
+                                                        .map((area) {
+                                                      return Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(left: 8),
+                                                        child: Text(
+                                                          area,
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 16,
+                                                            color: Color(
+                                                                0xFFe6e6e6),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }).toList(),
+                                                  ],
+                                                )
                                               ],
                                             ),
                                             const SizedBox(height: 16),
@@ -265,8 +277,10 @@ class _PhotographerPageState extends State<PhotographerPage> {
                                         (index) {
                                           return Image.asset(
                                             photographer['photos'][index],
-                                            width: 375,
-                                            height: 275,
+                                            width:
+                                                deviceWidth > 800 ? 375 : 275,
+                                            height:
+                                                deviceWidth > 800 ? 275 : 200,
                                             fit: BoxFit.cover,
                                           );
                                         },

@@ -39,6 +39,8 @@ class _ModelpageState extends State<Modelpage> {
     // final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
 
+    final double cardheight = deviceWidth > 1000 ? 400 : 300;
+
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.black,
@@ -53,7 +55,9 @@ class _ModelpageState extends State<Modelpage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        top: 25, bottom: deviceWidth > 800 ? 35 : 10, left: 20),
+                        top: deviceWidth > 800 ? 25 : 8,
+                        bottom: deviceWidth > 800 ? 25 : 8,
+                        left: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -71,13 +75,13 @@ class _ModelpageState extends State<Modelpage> {
                         //     style: TextStyle(fontSize: 16, color: Colors.white),
                         //   ),
                         // ),
-                        const SizedBox(
-                          height: 10,
+                        SizedBox(
+                          height: deviceWidth > 800 ? 10 : 2,
                         ),
                         Text(
                           'Model List',
                           style: TextStyle(
-                              fontSize: deviceWidth > 800 ? 45 : 32,
+                              fontSize: deviceWidth > 800 ? 45 : 28,
                               color: const Color(0xFFe6e6e6)),
                         ),
                       ],
@@ -95,63 +99,95 @@ class _ModelpageState extends State<Modelpage> {
                                 scrollDirection: Axis.vertical,
                                 gridDelegate:
                                     SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: deviceWidth > 1000
-                                            ? deviceWidth > 650
-                                                ? 4
+                                        crossAxisCount: deviceWidth > 600
+                                            ? deviceWidth > 850
+                                                ? deviceWidth > 1200
+                                                    ? 4
+                                                    : 3
                                                 : 2
                                             : 1),
                                 itemCount: listitems.length,
                                 itemBuilder: (context, index) {
                                   // ignore: prefer_interpolation_to_compose_strings
                                   return SizedBox(
-                                    width: 300,
-                                    height: 500,
-                                    child: Column(
-                                      children: [
-                                        InkWell(
-                                          key:
-                                              ValueKey(listitems[index]['key']),
-                                          onTap: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ModelDetailPage(
-                                                  item: listitems[index],
+                                    width: deviceWidth > 600
+                                        ? deviceWidth > 1200
+                                            ? deviceWidth / 5
+                                            : deviceWidth * 4 / 9
+                                        : deviceWidth * 4 / 5,
+                                    height: deviceWidth > 600
+                                        ? deviceWidth > 1200
+                                            ? 700
+                                            : 600
+                                        : 400,
+                                    child: Card(
+                                      color: Colors.black54,
+                                      elevation: 4,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                            top: cardheight * 0.05),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            InkWell(
+                                              key: ValueKey(
+                                                  listitems[index]['key']),
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageRouteBuilder(
+                                                        pageBuilder: (context,
+                                                                animation,
+                                                                secondaryAnimation) =>
+                                                            ModelDetailPage(
+                                                              item: listitems[
+                                                                  index],
+                                                            ),
+                                                        transitionDuration:
+                                                            Duration.zero));
+                                              },
+                                              onHover: (value) {
+                                                setState(() {
+                                                  _isHovered[index] = value;
+                                                });
+                                              },
+                                              child: Container(
+                                                width: 180,
+                                                height: 210,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  image: DecorationImage(
+                                                    image: AssetImage(
+                                                        listitems[index]
+                                                            ['photo0']),
+                                                    fit: BoxFit.cover,
+                                                    opacity: _isHovered[index]
+                                                        ? 0.8
+                                                        : 1,
+                                                  ),
                                                 ),
                                               ),
-                                            );
-                                          },
-                                          onHover: (value) {
-                                            setState(() {
-                                              _isHovered[index] = value;
-                                            });
-                                          },
-                                          child: Container(
-                                            width: 180,
-                                            height: 200,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                    listitems[index]['photo1']),
-                                                fit: BoxFit.cover,
-                                                opacity:
-                                                    _isHovered[index] ? 0.6 : 1,
-                                              ),
                                             ),
-                                          ),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              listitems[index]['text'],
+                                              style: TextStyle(
+                                                  color:
+                                                      const Color(0xFFe6e6e6),
+                                                  fontSize: deviceWidth > 600
+                                                      ? 20
+                                                      : 16),
+                                            )
+                                          ],
                                         ),
-                                        const SizedBox(
-                                          height: 20,
-                                        ),
-                                        Text(
-                                          listitems[index]['text'],
-                                          style: TextStyle(
-                                              color: const Color(0xFFe6e6e6),
-                                              fontSize:
-                                                  deviceWidth > 800 ? 20 : 16),
-                                        )
-                                      ],
+                                      ),
                                     ),
                                   );
                                 },

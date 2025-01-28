@@ -33,10 +33,11 @@ dependencies:
   carousel_slider: ^5.0.0
   smooth_page_indicator: ^1.2.0+3
   cupertino_icons: ^1.0.6
-  flutter_animate_on_scroll: ^0.1.1
   google_fonts: ^4.0.4
-  animate_do: ^3.3.4
   pdfx: ^2.6.0
+  bordered_text: ^2.0.0
+  video_player: ^2.9.2
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -62,27 +63,159 @@ flutter:
   assets:
     - lib/assets/
     - lib/assets/card.pdf
+    - lib/assets/著作権関係.pdf
+    - lib/assets/モデル事務所規約.pdf
+    - lib/assets/PrivacyPolicy.pdf
     - lib/assets/images/Home1.jpg
     - lib/assets/images/Home2.jpg
     - lib/assets/images/Home3.jpg
     - lib/assets/images/Home4.jpg
     - lib/assets/images/Home5.jpg
     - lib/assets/images/Home6.jpg
+    - lib/assets/images/e.jpg
+    - lib/assets/images/s.jpg
+    - lib/assets/images/m.jpg
+    - lib/assets/images/p.jpg
     - lib/assets/images/VisionImage.png
     - lib/assets/images/CardCousorle.png
     - lib/assets/images/mapsforhomepage/mapsforhp.jpg
+    - lib/assets/images/modelpage/model1/modelmain.png
     - lib/assets/images/modelpage/model1/modelpage1.jpg
     - lib/assets/images/modelpage/model1/modelpage2.jpg
     - lib/assets/images/modelpage/model1/modelpage3.jpg
     - lib/assets/images/modelpage/model1/modelpage4.jpg
     - lib/assets/images/modelpage/model1/modelpage5.jpg
-    - lib/assets/images/modelpage/model1/modelpage6.jpg
     - lib/assets/images/modelpage/model1/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model2/modelmain.png
+    - lib/assets/images/modelpage/model2/modelpage1.jpg
+    - lib/assets/images/modelpage/model2/modelpage2.jpg
+    - lib/assets/images/modelpage/model2/modelpage3.jpg
+    - lib/assets/images/modelpage/model2/modelpage4.jpg
+    - lib/assets/images/modelpage/model2/modelpage5.jpg
+    - lib/assets/images/modelpage/model2/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model3/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model3/modelmain.png
+    - lib/assets/images/modelpage/model3/modelpage1.jpg
+    - lib/assets/images/modelpage/model3/modelpage2.jpg
+    - lib/assets/images/modelpage/model3/modelpage3.jpg
+    - lib/assets/images/modelpage/model3/modelpage4.jpg
+    - lib/assets/images/modelpage/model3/modelpage5.jpg
+    - lib/assets/images/modelpage/model4/modelpage1.jpg
+    - lib/assets/images/modelpage/model4/modelpage2.jpg
+    - lib/assets/images/modelpage/model4/modelpage3.jpg
+    - lib/assets/images/modelpage/model4/modelpage4.jpg
+    - lib/assets/images/modelpage/model4/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model4/modelmain.png
+    - lib/assets/images/modelpage/model5/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model5/modelmain.png
+    - lib/assets/images/modelpage/model5/modelpage1.jpg
+    - lib/assets/images/modelpage/model5/modelpage2.jpg
+    - lib/assets/images/modelpage/model5/modelpage3.jpg
+    - lib/assets/images/modelpage/model5/modelpage4.jpg
+    - lib/assets/images/modelpage/model5/modelpage5.jpg
+    - lib/assets/images/modelpage/model6/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model6/modelmain.png
+    - lib/assets/images/modelpage/model6/modelpage1.jpg
+    - lib/assets/images/modelpage/model6/modelpage2.jpg
+    - lib/assets/images/modelpage/model6/modelpage3.jpg
+    - lib/assets/images/modelpage/model6/modelpage4.jpg
+    - lib/assets/images/modelpage/model6/modelpage5.jpg
+    - lib/assets/images/modelpage/model7/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model7/modelmain.png
+    - lib/assets/images/modelpage/model7/modelpage1.jpg
+    - lib/assets/images/modelpage/model7/modelpage2.jpg
+    - lib/assets/images/modelpage/model7/modelpage3.jpg
+    - lib/assets/images/modelpage/model7/modelpage4.jpg
+    - lib/assets/images/modelpage/model7/modelpage5.jpg
+    - lib/assets/images/modelpage/model7/modelpage6.jpg
+    - lib/assets/images/modelpage/model8/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model8/modelmain.png
+    - lib/assets/images/modelpage/model8/modelpage1.jpg
+    - lib/assets/images/modelpage/model8/modelpage2.jpg
+    - lib/assets/images/modelpage/model8/modelpage3.jpg
+    - lib/assets/images/modelpage/model8/modelpage4.jpg
+    - lib/assets/images/modelpage/model8/modelpage5.jpg
+    - lib/assets/images/modelpage/model9/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model9/modelmain.png
+    - lib/assets/images/modelpage/model9/modelpage1.jpg
+    - lib/assets/images/modelpage/model9/modelpage2.jpg
+    - lib/assets/images/modelpage/model9/modelpage3.jpg
+    - lib/assets/images/modelpage/model9/modelpage4.jpg
+    - lib/assets/images/modelpage/model9/modelpage5.jpg
+    - lib/assets/images/modelpage/model10/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model10/modelmain.png
+    - lib/assets/images/modelpage/model10/modelpage1.jpg
+    - lib/assets/images/modelpage/model10/modelpage2.jpg
+    - lib/assets/images/modelpage/model10/modelpage3.jpg
+    - lib/assets/images/modelpage/model10/modelpage4.jpg
+    - lib/assets/images/modelpage/model10/modelpage5.jpg
+    - lib/assets/images/modelpage/model11/modeldetailpagescreen.jpg
+    - lib/assets/images/modelpage/model11/modelmain.png
+    - lib/assets/images/modelpage/model11/modelpage1.jpg
+    - lib/assets/images/modelpage/model11/modelpage2.jpg
+    - lib/assets/images/modelpage/model11/modelpage3.jpg
+    - lib/assets/images/modelpage/model11/modelpage4.jpg
+    - lib/assets/images/modelpage/model11/modelpage5.jpg
+    - lib/assets/images/photographerpage/kazukinishimura/photographmain.png
     - lib/assets/images/photographerpage/kazukinishimura/photograph1.jpg
     - lib/assets/images/photographerpage/kazukinishimura/photograph2.jpg
     - lib/assets/images/photographerpage/kazukinishimura/photograph3.jpg
     - lib/assets/images/photographerpage/kazukinishimura/photograph4.jpg
     - lib/assets/images/photographerpage/kazukinishimura/photograph5.jpg
+    - lib/assets/images/photographerpage/yutaro/photographmain.png
+    - lib/assets/images/photographerpage/yutaro/photograph1.jpg
+    - lib/assets/images/photographerpage/yutaro/photograph2.jpg
+    - lib/assets/images/photographerpage/yutaro/photograph3.jpg
+    - lib/assets/images/photographerpage/yutaro/photograph4.jpg
+    - lib/assets/images/photographerpage/yutaro/photograph5.jpg
+    - lib/assets/images/photographerpage/gu/photographmain.png
+    - lib/assets/images/photographerpage/gu/photograph1.jpg
+    - lib/assets/images/photographerpage/gu/photograph2.jpg
+    - lib/assets/images/photographerpage/gu/photograph3.jpg
+    - lib/assets/images/photographerpage/gu/photograph4.jpg
+    - lib/assets/images/photographerpage/gu/photograph5.jpg
+    - lib/assets/images/photographerpage/sopi/photographmain.png
+    - lib/assets/images/photographerpage/sopi/photograph1.jpg
+    - lib/assets/images/photographerpage/sopi/photograph2.jpg
+    - lib/assets/images/photographerpage/sopi/photograph3.jpg
+    - lib/assets/images/photographerpage/sopi/photograph4.jpg
+    - lib/assets/images/photographerpage/sopi/photograph5.jpg
+    - lib/assets/images/photographerpage/takumi/photographmain.png
+    - lib/assets/images/photographerpage/takumi/photograph1.jpg
+    - lib/assets/images/photographerpage/takumi/photograph2.jpg
+    - lib/assets/images/photographerpage/takumi/photograph3.jpg
+    - lib/assets/images/photographerpage/takumi/photograph4.jpg
+    - lib/assets/images/photographerpage/takumi/photograph5.jpg
+    - lib/assets/images/photographerpage/kurosuke/photographmain.png
+    - lib/assets/images/photographerpage/kurosuke/photograph1.jpg
+    - lib/assets/images/photographerpage/kurosuke/photograph2.jpg
+    - lib/assets/images/photographerpage/kurosuke/photograph3.jpg
+    - lib/assets/images/photographerpage/kurosuke/photograph4.jpg
+    - lib/assets/images/photographerpage/kurosuke/photograph5.jpg
+    - lib/assets/images/photographerpage/takomun/photographmain.png
+    - lib/assets/images/photographerpage/takomun/photograph1.jpg
+    - lib/assets/images/photographerpage/takomun/photograph2.jpg
+    - lib/assets/images/photographerpage/takomun/photograph3.jpg
+    - lib/assets/images/photographerpage/takomun/photograph4.jpg
+    - lib/assets/images/photographerpage/takomun/photograph5.jpg
+    - lib/assets/images/photographerpage/machin/photographmain.png
+    - lib/assets/images/photographerpage/machin/photograph1.jpg
+    - lib/assets/images/photographerpage/machin/photograph2.jpg
+    - lib/assets/images/photographerpage/machin/photograph3.jpg
+    - lib/assets/images/photographerpage/machin/photograph4.jpg
+    - lib/assets/images/photographerpage/machin/photograph5.jpg
+    - lib/assets/images/photographerpage/uno/photographmain.png
+    - lib/assets/images/photographerpage/uno/photograph1.jpg
+    - lib/assets/images/photographerpage/uno/photograph2.jpg
+    - lib/assets/images/photographerpage/uno/photograph3.jpg
+    - lib/assets/images/photographerpage/uno/photograph4.jpg
+    - lib/assets/images/photographerpage/uno/photograph5.jpg
+    - lib/assets/images/photographerpage/misaking/photographmain.png
+    - lib/assets/images/photographerpage/misaking/photograph1.jpg
+    - lib/assets/images/photographerpage/misaking/photograph2.jpg
+    - lib/assets/images/photographerpage/misaking/photograph3.jpg
+    - lib/assets/images/photographerpage/misaking/photograph4.jpg
+    - lib/assets/images/photographerpage/misaking/photograph5.jpg
     - lib/assets/images/modelcontentpage/modelcontentpage1.jpg
     - lib/assets/images/modelcontentpage/modelcontentpage2.jpg
     - lib/assets/images/modelcontentpage/modelcontentpage3.jpg
@@ -97,11 +230,7 @@ flutter:
     - lib/assets/images/photopartycontentpage/photopartypage1.jpg
     - lib/assets/images/photopartycontentpage/photopartypage2.jpg
     - lib/assets/images/photopartycontentpage/photopartypage3.jpg
-    - lib/assets/images/photopartycontentpage/photopartypage4.jpg
-    - lib/assets/images/photopartycontentpage/photopartypage5.jpg
-    - lib/assets/images/moviecontentpage/moviecontentpage1.jpg
-    - lib/assets/images/moviecontentpage/moviecontentpage2.jpg
-    - lib/assets/images/moviecontentpage/moviecontentpage3.jpg
+    - lib/assets/images/moviecontentpage/video.mp4
     - lib/assets/images/Instagram.png
     
   fonts:

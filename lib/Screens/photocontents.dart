@@ -33,7 +33,7 @@ class _PhotoContentsState extends State<PhotoContents> {
     });
     _scrollController.addListener(() {
       setState(() {
-        if (_scrollController.offset > 2000 + deviceheight * 3) {
+        if (_scrollController.offset > 2500 + deviceheight * 4) {
           _currentImage =
               'lib/assets/images/photocontentpage/photocontent6.jpg';
         } else if (_scrollController.offset > 2000 + deviceheight * 3) {
@@ -119,13 +119,21 @@ class _PhotoContentsState extends State<PhotoContents> {
                             'フォト事業について',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             'Co.Atelierでは多くのカメラマンが活躍しています。',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -133,12 +141,13 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     '皆様のご要望に沿った最適なカメラマンが\n写真撮影をさせていただきます',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           deviceWidth > 900
@@ -147,26 +156,51 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'ご期待以上のカメラマンと共に\n素晴らしい仕事をしてみませんか？',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
+                          Text(
+                            '*納品物は全て写真加工までさせていただきます。',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 28
+                                        : 14
+                                    : 10),
+                          ),
+                          Text(
+                            '*価格は交渉次第で変更となります。',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
+                          ),
                           Text(
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 32 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),
@@ -189,13 +223,21 @@ class _PhotoContentsState extends State<PhotoContents> {
                             'ポートレート撮影メニュー',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             'ポートレート撮影をご要望ですか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -203,12 +245,13 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Co.Atelierで最適なポートレート撮影\nをお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -217,7 +260,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                               0: FlexColumnWidth(2),
                               1: FlexColumnWidth(4),
                               2: FlexColumnWidth(1),
-                              3: FlexColumnWidth(1),
                             },
                             children: [
                               TableRow(
@@ -247,16 +289,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '撮影枚数',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 24 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
                                       '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
@@ -271,129 +303,28 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      'ベーシックプラン',
+                                      'ポートレート撮影',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・背景が白背景になります。\n・写真加工もさせていただきます。\n・被写体が複数人ご希望の場合は人数分料金がかかります。',
+                                      '・1人10枚まで\n・デジタルデータのみ\n・被写体が複数人ご希望の場合は人数分料金がかかります。\n・対応時間は2時間となります。',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '10枚×人数',
+                                      '31,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'プレミアムプラン',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・ローケーション指定可能です。\n・写真加工もさせていただきます。\n・被写体が複数人ご希望の場合は人数分料金がかかります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '10枚×人数',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '名刺作成プラン',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・背景が白背景になります。\n・名刺用に写真加工もさせていただきます。\n・被写体が複数人ご希望の場合は人数分料金がかかります。\n・名刺印刷も請け負います',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '5枚×人数',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -404,14 +335,18 @@ class _PhotoContentsState extends State<PhotoContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),
@@ -434,13 +369,21 @@ class _PhotoContentsState extends State<PhotoContents> {
                             'イベント撮影メニュー',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             'イベントや展示会での撮影は必要でしょうか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -448,12 +391,13 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Co.Atelierでイベントや展示会用に\n最適なカメラマンをお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -462,7 +406,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                               0: FlexColumnWidth(2),
                               1: FlexColumnWidth(4),
                               2: FlexColumnWidth(1),
-                              3: FlexColumnWidth(1),
                             },
                             children: [
                               TableRow(
@@ -492,16 +435,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '撮影枚数',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 24 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
                                       '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
@@ -516,85 +449,28 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '小規模イベント向け（食事会等）',
+                                      'イベント撮影',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・カメラマンが現地に赴きます。\n・写真加工もさせていただきます。\n・ご希望があればフォトブックの作成もさせていただきます。\n・時間は4時間となります。',
+                                      '・カメラマンが現地に赴きます。\n・1イベントにつき50枚の写真\n・ご希望があればフォトブックの作成可能\n・対応時間は4時間となります。',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '50枚',
+                                      '67,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '大規模イベント向け（結婚式/セミナー等）',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・カメラマンが現地に赴きます。\n・写真加工もさせていただきます。\n・ご希望があればフォトブックの作成もさせていただきます。\n・時間は8時間となります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '100枚',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -605,14 +481,18 @@ class _PhotoContentsState extends State<PhotoContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),
@@ -632,16 +512,24 @@ class _PhotoContentsState extends State<PhotoContents> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            '商品撮影メニュー',
+                            '商品撮影',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             '商品撮影の依頼をご希望ですか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -649,12 +537,13 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Co.Atelierで最適なカメラマンが\n最高の商品撮影をお届けします。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -663,7 +552,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                               0: FlexColumnWidth(2),
                               1: FlexColumnWidth(4),
                               2: FlexColumnWidth(1),
-                              3: FlexColumnWidth(1),
                             },
                             children: [
                               TableRow(
@@ -693,16 +581,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '点数（撮影枚数）',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 24 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
                                       '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
@@ -717,129 +595,28 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '商品撮影ベーシックプラン',
+                                      '商品撮影',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・背景は白背景となります。\n・写真加工もさせていただきます。\n・デジタルデータのみとなります。',
+                                      '・全部で50枚となります。\n・デジタルデータのみ',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '10点(計50枚)',
+                                      '39,980円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '商品撮影プレミアムプラン',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・背景指定可能でございます。\n・写真加工もさせていただきます。\n・デジタルデータのみとなります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '10点(計50枚)',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '商品撮影モデル起用プラン',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'モデル起用2人まで可能です。\n・背景指定可能でございます。\n・写真加工もさせていただきます。\n・デジタルデータのみとなります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '10点(計50枚)',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -850,14 +627,18 @@ class _PhotoContentsState extends State<PhotoContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),
@@ -880,13 +661,21 @@ class _PhotoContentsState extends State<PhotoContents> {
                             '編集加工メニュー',
                             style: TextStyle(
                                 color: Colors.lightBlueAccent,
-                                fontSize: deviceWidth > 900 ? 50 : 24),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 50
+                                        : 24
+                                    : 16),
                           ),
                           Text(
                             '写真の編集加工の依頼をご希望ですか？',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 32 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           deviceWidth > 900
                               ? const Text(
@@ -894,12 +683,13 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 32),
                                 )
-                              : const Align(
+                              : Align(
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Co.Atelierでは編集加工のみ\nのご依頼も承っております。',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white,
+                                        fontSize: deviceWidth > 380 ? 16 : 12),
                                   ),
                                 ),
                           Table(
@@ -908,7 +698,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                               0: FlexColumnWidth(2),
                               1: FlexColumnWidth(4),
                               2: FlexColumnWidth(1),
-                              3: FlexColumnWidth(1),
                             },
                             children: [
                               TableRow(
@@ -938,16 +727,6 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '枚数',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 24 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
                                       '基本価格',
                                       style: TextStyle(
                                           color: Colors.white,
@@ -962,129 +741,28 @@ class _PhotoContentsState extends State<PhotoContents> {
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      'ベーシック編集プラン',
+                                      '編集加工',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '・カラー調整、明るさ・コントラストの調整、トリミング\n・複数枚の場合は×枚数。',
+                                      '・肌の補正、背景変更、オブジェクト削除・追加、細かなディテール調整\n・複数枚の場合は×枚数。\n・デジタルデータのみ',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text(
-                                      '1枚',
+                                      '1,200円',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'プレミアム編集プラン',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・肌の補正、背景変更、オブジェクト削除・追加、細かなディテール調整\n・複数枚の場合は×枚数',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '1枚',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TableRow(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '写真集・フォトブック作成',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '・写真集から作成\n・50枚以上の場合は10枚×〇円追加となります。',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '50枚',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Text(
-                                      '',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize:
-                                              deviceWidth > 900 ? 20 : 10),
+                                          fontSize: deviceWidth > 900 ? 20 : 8),
                                     ),
                                   ),
                                 ],
@@ -1095,14 +773,18 @@ class _PhotoContentsState extends State<PhotoContents> {
                             '詳細なメニューは下記チラシをご覧ください',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: deviceWidth > 900 ? 20 : 16),
+                                fontSize: deviceWidth > 380
+                                    ? deviceWidth > 900
+                                        ? 32
+                                        : 16
+                                    : 12),
                           ),
                           TextButton(
                               onPressed: _openPDF,
                               child: Text(
                                 'チラシを見る',
                                 style: TextStyle(
-                                    fontSize: deviceWidth > 900 ? 20 : 16),
+                                    fontSize: deviceWidth > 900 ? 32 : 12),
                               )),
                         ],
                       ),

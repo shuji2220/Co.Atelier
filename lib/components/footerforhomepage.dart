@@ -49,11 +49,12 @@ class _FooterforHomepageState extends State<FooterforHomepage> {
                 TextButton(
                     onPressed: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Homepage(),
-                        ),
-                      );
+                          context,
+                          PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      const Homepage(),
+                              transitionDuration: Duration.zero));
                     },
                     child: const Text(
                       'Top',
@@ -75,41 +76,46 @@ class _FooterforHomepageState extends State<FooterforHomepage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const ModelContents(),
-                      ),
+                      PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const ModelContents(),
+                          transitionDuration: Duration.zero),
                     );
                   },
                   child: const Text('モデル事業', style: TextStyle(fontSize: 12))),
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PhotoContents(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const PhotoContents(),
+                            transitionDuration: Duration.zero));
                   },
                   child: const Text('フォト事業', style: TextStyle(fontSize: 12))),
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PhotoPartyContents(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const PhotoPartyContents(),
+                            transitionDuration: Duration.zero));
                   },
                   child:
                       const Text('撮影会企画運営事業', style: TextStyle(fontSize: 12))),
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MovieContents(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const MovieContents(),
+                            transitionDuration: Duration.zero));
                   },
                   child: const Text('映像事業', style: TextStyle(fontSize: 12))),
             ],
@@ -127,33 +133,36 @@ class _FooterforHomepageState extends State<FooterforHomepage> {
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Modelpage(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const Modelpage(),
+                            transitionDuration: Duration.zero));
                   },
                   child:
                       const Text('Model List', style: TextStyle(fontSize: 12))),
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PhotographerPage(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const PhotographerPage(),
+                            transitionDuration: Duration.zero));
                   },
                   child: const Text('Photographer List',
                       style: TextStyle(fontSize: 12))),
               TextButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const OfferPage(),
-                      ),
-                    );
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const OfferPage(),
+                            transitionDuration: Duration.zero));
                   },
                   child: const Text('案件依頼', style: TextStyle(fontSize: 12))),
             ],
