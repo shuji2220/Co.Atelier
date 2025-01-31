@@ -269,6 +269,6 @@ const List<Map<String, dynamic>> listitems = [
       'lib/assets/images/modelpage/model11/modelpage5.jpg',
     ],
     'instagram':
-        'https://www.instagram.com/_.5_blacklady1/?igsh=MW15dHFsM2k3YTI4bw%3D%3D&utm_source=qr#'
+        'https://www.instagram.com/suyaaa0829/?igsh=MTNrNGxtc3l5ZXJ5bg%3D%3D&utm_source=qr#'
   },
 ];
