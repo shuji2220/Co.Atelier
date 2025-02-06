@@ -129,7 +129,7 @@ const List<Map<String, dynamic>> listitems = [
   },
   {
     'key': '6',
-    'text': '椿',
+    'text': '椿己',
     'modelname': 'Tsubaki',
     'detail': {
       'Height': '163',
