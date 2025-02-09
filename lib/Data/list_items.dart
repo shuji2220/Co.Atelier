@@ -226,7 +226,7 @@ const List<Map<String, dynamic>> listitems = [
   {
     'key': '10',
     'text': 'アリス',
-    'modelname': 'Arisu',
+    'modelname': 'Alice',
     'detail': {
       'Height': '151',
       'Bust': '75',
