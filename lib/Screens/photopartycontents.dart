@@ -90,6 +90,7 @@ class _PhotoPartyContentsState extends State<PhotoPartyContents> {
                 ),
               ),
               SingleChildScrollView(
+                physics: const ClampingScrollPhysics(),
                 controller: _scrollController,
                 child: Column(
                   children: [

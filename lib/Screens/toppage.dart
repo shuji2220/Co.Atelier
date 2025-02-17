@@ -42,6 +42,7 @@ class _HomepageState extends State<Homepage> {
         body: Stack(
           children: [
             CustomScrollView(
+              physics: const ClampingScrollPhysics(),
               slivers: [
                 SliverAppBar(
                   automaticallyImplyLeading: false,

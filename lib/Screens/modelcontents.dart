@@ -96,6 +96,7 @@ class _ModelContentsState extends State<ModelContents> {
                 ),
               ),
               SingleChildScrollView(
+                physics: const ClampingScrollPhysics(),
                 controller: _scrollController,
                 child: Column(
                   children: [

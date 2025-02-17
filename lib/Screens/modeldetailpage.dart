@@ -68,6 +68,7 @@ class _ModelDetailPageState extends State<ModelDetailPage> {
                   ),
                 ),
                 child: SingleChildScrollView(
+                  physics: const ClampingScrollPhysics(),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

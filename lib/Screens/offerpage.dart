@@ -52,6 +52,7 @@ class _OfferPageState extends State<OfferPage> {
       body: Stack(
         children: [
           SingleChildScrollView(
+            physics: const ClampingScrollPhysics(),
             child: Column(
               children: [
                 const SizedBox(

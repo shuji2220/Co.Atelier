@@ -98,6 +98,7 @@ class _PhotoContentsState extends State<PhotoContents> {
                 ),
               ),
               SingleChildScrollView(
+                physics: const ClampingScrollPhysics(),
                 controller: _scrollController,
                 child: Column(
                   children: [

@@ -89,6 +89,7 @@ class _ModelpageState extends State<Modelpage> {
                   ),
                   Expanded(
                     child: SingleChildScrollView(
+                      physics: const ClampingScrollPhysics(),
                       child: Column(
                         children: [
                           Column(

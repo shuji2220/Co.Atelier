@@ -90,6 +90,7 @@ class _PhotographerPageState extends State<PhotographerPage> {
                 ),
                 Expanded(
                   child: SingleChildScrollView(
+                    physics: const ClampingScrollPhysics(),
                     child: Column(
                       children: [
                         Column(

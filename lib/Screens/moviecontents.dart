@@ -79,6 +79,7 @@ class _MovieContentsState extends State<MovieContents> {
                     : const Center(child: CircularProgressIndicator()),
               ),
               SingleChildScrollView(
+                physics: const ClampingScrollPhysics(),
                 controller: _scrollController,
                 child: Column(
                   children: [

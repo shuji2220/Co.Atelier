@@ -69,6 +69,7 @@ class _PhotographerDetailState extends State<PhotographerDetail> {
                   ),
                 ),
                 child: SingleChildScrollView(
+                  physics: const ClampingScrollPhysics(),
                   child: Column(
                     children: [
                       SizedBox(
